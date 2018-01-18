@@ -1,0 +1,15 @@
+import React from 'react';
+
+import VipSuccessPage from '../../views/finance/VipSuccessPage';
+
+class VipSuccessPageController extends React.Component {
+  render() {
+    return (
+      <div>
+        <VipSuccessPage {...this.props} />
+      </div>
+    );
+  }
+}
+
+export default VipSuccessPageController;

@@ -1,0 +1,5 @@
+
+// const BaseUrl = 'http://192.168.18.196:8081';
+const BaseUrl = 'http://192.168.18.195:8081';
+
+export default BaseUrl;

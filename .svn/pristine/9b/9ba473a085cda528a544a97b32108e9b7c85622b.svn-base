@@ -1,0 +1,11 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+/* eslint import/no-webpack-loader-syntax: 0 */
+/* eslint import/extensions: 0 */
+/* eslint import/no-unresolved: 0 */
+import React from 'react';
+import FinanceRoutes from 'bundle-loader?lazy&name=[name]!./FinanceRoutes';
+import ModLoader from '../ModLoader';
+
+export default () => (
+  <ModLoader mod={FinanceRoutes} />
+);

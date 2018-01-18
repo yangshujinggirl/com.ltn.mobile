@@ -1,0 +1,186 @@
+// 常规标的 样式
+.normal-finance-detail-wrap {
+  padding-bottom: 138px;
+  .product-main-info {
+    padding-top: 40px;
+  }
+  .finane-des-tabs {
+    background-color: #fff;
+    color: #333;
+    .tab-wrap {
+      border: 1px solid #ebebeb;
+      line-height: inherit;
+      font-size: 0;
+      span {
+        position   : relative;
+        display    : inline-block;
+        width      : 33.3%;
+        text-align : center;
+        font-size  : 32px;
+        padding: 32px 0;
+        &.activity {
+          color: #ff6600;
+          i {
+            position        : absolute;
+            bottom          : 0;
+            left            : 50%;
+            margin-left     : -25px;
+            width           : 50px;
+            height          : 5PX;
+            background-color: #ff6600;
+          }
+        }
+      }
+    }
+  }
+  .tab-content-wrap {
+    padding   : 50px 6.5%;
+    background: #f4f5f7;
+    &.tyb-detail {
+      background-color: #fff;
+    }
+    .project-info-wrap {
+      .title {
+        margin-top   : 40px;
+        margin-bottom: 24px;
+        padding-left : 7px;
+        height       : 30px;
+        border-left  : 6px solid #ff6600;
+        font-size    : 28px;
+        line-height  : 30px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      .content {
+        color      : #999;
+        font-size  : 24px;
+        line-height: 1.5em;
+      }
+    }
+  }
+  .am-list-item {
+    padding-left: 0;
+    .am-list-line {
+      padding-right: 0;
+      &:after {
+        border-bottom: none !important;
+      }
+    }
+    .am-list-content {
+      padding-top   : 0;
+      padding-bottom: 0;
+    }
+  }
+  .am-list-body {
+    position        : relative;
+    border-top      : none;
+    background-color: inherit;
+    &:after {
+      border-bottom: none;
+    }
+  }
+  .am-list-item .am-list-line .am-list-content {
+    line-height: inherit;
+  }
+}
+.finance-project-detail-viewscroll,
+.finance-project-safe-viewscroll {
+  .am-list-item {
+    min-height: inherit;
+    .am-list-line {
+      min-height: inherit;
+      .am-list-content {
+        line-height: inherit;
+      }
+    }
+  }
+  .finance-project-detail {
+    margin-top   : 48px;
+    padding-right: 6.5%;
+    padding-left : 6.5%;
+    .title {
+      margin      : 48px 0 24px;
+      padding-left: 8px;
+      border-left : 5PX solid #ff6600;
+      color       : #333333;
+      font-weight : normal;
+      font-size   : 28px;
+    }
+    .content {
+      color    : #999;
+      font-size: 24px;
+      line-height: 150%;
+      .img-text-wrap {
+        font-size: 0;
+        .img-text-item {
+          float        : left;
+          margin-bottom: 20px;
+          width        : 25%;
+          height: 170px;
+          text-align   : center;
+          img {
+            width : 90px;
+            height: 90px;
+          }
+          span {
+            display   : inline-block;
+            margin-top: 16px;
+            width     : 100%;
+            text-align: center;
+            font-size : 24px;
+          }
+        }
+      }
+      .has-icon {
+        img {
+          margin-bottom: -5px;
+          width        : 30px;
+        }
+      }
+      a {
+        color: #ff6600;
+      }
+      .item {
+        display      : inline-block;
+        margin-bottom: 16px;
+        width        : 49%;
+        font-size    : 0;
+        font-size    : 24px;
+        i {
+          font-style: normal;
+          &:first-child {
+            display     : inline-block;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+.buy-list-wrap {
+  padding:16px 0;
+  &:nth-child(2n+1) {
+    background-color: #fff;
+  }
+  p {
+    margin: 0;
+    span {
+      display   : inline-block;
+      width     : 33%;
+      text-align: center;
+      font-size : 24px;
+    }
+  }
+  .nodata {
+    margin-top: 40px;
+    text-align: center;
+    font-size : 26px;
+  }
+}
+.list-title {
+  background-color: #f4f5f7;
+}
+.main-finance-content {
+  background-color: #fff;
+}

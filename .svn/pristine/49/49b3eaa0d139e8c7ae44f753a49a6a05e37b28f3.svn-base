@@ -1,0 +1,24 @@
+// 理财模块路由
+import React from 'react';
+import {
+  Switch,
+  Route
+} from 'react-router-dom';
+
+import FinanceDetailController from '../controllers/finance/FinanceDetailController';
+import ProjectDetailController from '../controllers/finance/ProjectDetailController';
+import VipFinanceController from '../controllers/finance/VipFinanceController';
+import VipFinanceSelectController from '../controllers/finance/VipFinanceSelectController';
+import VipSuccessPageController from '../controllers/finance/VipSuccessPageController';
+
+const ProductRoutes = () => (
+  <Switch>
+    <Route exact path="/finance/:productId" component={FinanceDetailController} />
+    <Route exact path="/finance/vip/:productId" component={VipFinanceController} />
+    <Route exact path="/finance/vipselect/:productId" component={VipFinanceSelectController} />
+    <Route exact path="/finance/project/:productId" component={ProjectDetailController} />
+    <Route exact path="/finance/vipSuccess/:productId" component={VipSuccessPageController} />
+  </Switch>
+);
+
+export default ProductRoutes;

@@ -1,0 +1,195 @@
+ .integral-page-content{
+   background-color: #f5f5f5;
+   font-size: 0;
+   color: #666;
+   img {
+     width: 100%;
+   }
+   .part-same {
+     text-align: center;
+     font-size: 26px;
+     line-height: 150%;
+     .part-wrap {
+       padding: 0 20px;
+     }
+   }
+   .part-one {
+     text-align: left;
+     background-color: #fff;
+     padding: 40px 0 46px;
+     position: relative;
+     margin-bottom: 24px;
+     .top-arrow {
+       position: absolute;
+       top:0;
+       left:50%;
+       transform: translate(-50%,-50%);
+       -webkit-transform: translate(-50%,-50%);
+       width: 0;
+       height: 0;
+       border-left:30px solid transparent;
+       border-right:30px solid transparent;
+       border-bottom: 40px solid #fff;
+     }
+   }
+   .part-two {
+     background-color: #fff;
+     padding: 26px 0 46px;
+     margin-bottom: 24px;
+     .part-title {
+       font-size: 36px;
+       color: #1c1c1c;
+       margin-bottom: 46px;
+     }
+     .action-list {
+       text-align: center;
+       overflow: hidden;
+       zoom:1;
+       .item {
+         line-height: 120%;
+         position: relative;
+         width: 23%;
+         float: left;
+         text-align: center;
+         color: #fff;
+         padding: 14px 0 16px;
+         &:nth-child(1) {
+           background: url('./imgs/bg0.png') center;
+           background-size: cover;
+         }
+         &:nth-child(2) {
+           background: url('./imgs/bg1.png') center;
+           background-size: cover;
+         }
+         &:nth-child(3) {
+           background: url('./imgs/bg2.png') center;
+           background-size: cover;
+         }
+         &:last-child {
+           float: right;
+           background: url('./imgs/bg3.png') center;
+           background-size: cover;
+         }
+         &:not(:last-child) {
+           margin-right:2.4%;
+         }
+         .ims {
+           display: inline-block;
+           width: 42.5%;
+         }
+       }
+     }
+   }
+   .part-thr {
+     background-color: #fff;
+     text-align: left;
+     color: #999;
+     .part-title {
+       text-align: center;
+       font-size: 36px;
+       color: #1C1C1C;
+       padding: 50px 0 46px;
+       border-bottom: 1px solid #eee;
+     }
+     .item {
+       padding: 40px 0;
+       border-bottom: 1px solid #eee;
+     }
+     .l-icon,.r-cont {
+       display: inline-block;
+       vertical-align: middle;
+     }
+     .l-icon {
+       width: 10%;
+     }
+     .r-cont {
+       width: 89%;
+       padding-left: 5%;
+       box-sizing: border-box;
+       position: relative;
+       .tt {
+         font-size: 30px;
+         color: #1c1c1c;
+         margin-bottom: 10px;
+       }
+       .btn {
+         position: absolute;
+         right: 0;
+         top:50%;
+         transform: translateY(-50%);
+         -webkit-transform: translateY(-50%);
+         width: 156px;
+         height: 56px;
+         line-height: 56px;
+         color: #fff;
+         font-size: 28px;
+         background-color: #f60;
+         text-align: center;
+         border-radius: 28px;
+         &.disable {
+           background-color: #999;
+         }
+       }
+     }
+     .b-text {
+       padding: 20px 0;
+     }
+     table,td,tr,th {
+       border: 1px solid #ccc;
+       border-collapse: collapse;
+     }
+     table {
+       text-align: center;
+       width: 100%;
+       margin-bottom:10px;
+       td {
+         width: 40%;
+         box-sizing: border-box;
+         padding: 20px 0;
+         &:nth-child(1) {
+           width: 35%;
+         }
+         &:nth-child(2) {
+           width: 25%;
+         }
+       }
+       thead {
+         background-color: #fcfcfc;
+         font-size: 28px;
+         th{
+           padding: 36px 0;
+         }
+       }
+       .row-con {
+         text-align: left;
+         padding: 0 10px;
+       }
+     }
+   }
+   .footer {
+     text-align: center;
+     font-size: 26px;
+     padding: 46px 0;
+     color: #999;
+     margin-bottom: 160px
+   }
+   .btn-wrap {
+     width: 100%;
+     text-align: center;
+     background-color: #fff;
+     padding: 30px 0;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     .duihuan {
+       display: inline-block;
+       width:90%;
+       height: 100px;
+       line-height: 100px;
+       color: #fff;
+       font-size: 32px;
+       background-color: #f60;
+       border-radius: 50px;
+     }
+   }
+ }

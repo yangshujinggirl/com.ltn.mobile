@@ -1,0 +1,42 @@
+// 帮助中心 路由集合组件
+import React from 'react';
+import {
+  Switch,
+  Redirect,
+  Route
+} from 'react-router-dom';
+
+import FaqListPage from '../views/faq/FaqListPage';
+import FaqSignPage from '../views/faq/FaqSignPage';
+import FaqBindPage from '../views/faq/FaqBindPage';
+import FaqPasswordPage from '../views/faq/FaqPasswordPage';
+import FaqSafePage from '../views/faq/FaqSafePage';
+import FaqRechargePage from '../views/faq/FaqRechargePage';
+import FaqProjectInfoPage from '../views/faq/FaqProjectInfoPage';
+import FaqBirdcoinPage from '../views/faq/FaqBirdcoinPage';
+import FaqTicketPage from '../views/faq/FaqTicketPage';
+import FaqPartnerPage from '../views/faq/FaqPartnerPage';
+import FaqBondPage from '../views/faq/FaqBondPage';
+import FaqPointsPage from '../views/faq/FaqPointsPage';
+
+const routes = () => (
+  <div className="faq-center-warp">
+    <Switch >
+      <Route exact path="/faq/list" component={FaqListPage} />
+      <Route exact path="/faq/sign" component={FaqSignPage} />
+      <Route exact path="/faq/bind" component={FaqBindPage} />
+      <Route exact path="/faq/password" component={FaqPasswordPage} />
+      <Route exact path="/faq/safe" component={FaqSafePage} />
+      <Route exact path="/faq/recharge" component={FaqRechargePage} />
+      <Route exact path="/faq/projectInfo" component={FaqProjectInfoPage} />
+      <Route exact path="/faq/birdCoin" component={FaqBirdcoinPage} />
+      <Route exact path="/faq/tickits" component={FaqTicketPage} />
+      <Route exact path="/faq/partner" component={FaqPartnerPage} />
+      <Route exact path="/faq/bond" component={FaqBondPage} />
+      <Route exact path="/faq/points" component={FaqPointsPage} />
+      <Redirect from="/faq" to="/faq/list" />
+    </Switch>
+  </div>
+);
+
+export default routes;

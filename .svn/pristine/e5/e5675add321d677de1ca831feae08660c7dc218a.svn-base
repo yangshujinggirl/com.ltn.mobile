@@ -1,0 +1,18 @@
+import React from 'react';
+import arrow from './imgs/arrow.png';
+
+class VipNav extends React.Component {
+
+  popToRootController() {
+    window.LtnApp.popToRootController();
+  }
+  render() {
+    return (
+      <div className="vip-nav-wrap" onClick={this.popToRootController}>
+        <img src={arrow} alt="arrow"/>
+      </div>
+    );
+  }
+}
+
+export default VipNav;

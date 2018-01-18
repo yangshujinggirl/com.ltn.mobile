@@ -1,0 +1,65 @@
+.prize-record-list {
+  padding-top: 130px;
+  .header-nav {
+    top           : 0;
+    background    : #ffffff;
+    box-shadow    : 0 2px 15px 0 rgba(224,224,224,0.50);
+    position      : fixed;
+    width         : 100%;
+    color         : #333;
+    padding-top   : 60px;
+    padding-bottom: 30px;
+    font-size     : 36px;
+    text-align    : center;
+    box-sizing    : border-box;
+    padding-left  : 48px;
+    padding-right : 48px;
+    .icon-arrow {
+      float : left;
+      height: 40px;
+      width : 20px;
+    }
+  }
+  h4 {
+    font-size     : 28px;
+    color         : #999999;
+    letter-spacing: 0;
+    line-height   : 28px;
+    text-align    : left;
+    font-weight   : normal;
+    margin        : 60px 0 20px 40px;
+  }
+  .month-wrap {
+    background   : #ffffff;
+    box-shadow   : 0 2px 19px 0 rgba(218,218,218,0.50);
+    padding      : 0 40px;
+    margin-bottom: 16px;
+    .month-name {
+      font-size    : 34px;
+      padding      : 32px 0;
+      color        : #111111;
+      border-bottom: 1px solid #eeeeee;
+      .en {
+        margin-right: 10px;
+      }
+    }
+    .sigin-item {
+      padding: 8px 0;
+      p {
+        margin: 24px 50px;
+        span {
+          display  : inline-block;
+          width    : 50%;
+          font-size: 26px;
+          color    : #666666;
+          &:first-child {
+            text-align: left;
+          }
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+// 认证绑定 帮助
+import React from 'react';
+import { Carousel, Flex, WingBlank } from 'antd-mobile';
+
+
+import bannerImg from './imgs/banner.jpg';
+import titleImg from './imgs/title0.png';
+import subtitleImg from './imgs/image0.png';
+import infoImg from './imgs/image1.png';
+
+// 品牌介绍
+import brandImg from './imgs/title1.png';
+import brandImg2 from './imgs/image2.png';
+
+import safeimg from './imgs/icon-safe.png';
+import timeimg from './imgs/icon-time.png';
+import safe2img from './imgs/icon-safe2.png';
+import eyeimg from './imgs/icon-eye.png';
+
+// 团队介绍
+import teamImg from './imgs/team.png';
+import people0 from './imgs/people0.png';
+import people1 from './imgs/people1.png';
+import people2 from './imgs/people2.png';
+import people3 from './imgs/people3.png';
+import people4 from './imgs/people4.png';
+
+// 品牌荣誉
+import title3 from './imgs/title3.png';
+import honor1 from './imgs/honor1.jpg';
+import honor2 from './imgs/honor2.jpg';
+import honor3 from './imgs/honor3.jpg';
+import honor4 from './imgs/honor4.jpg';
+
+const PlatIntroductionPage = () => {
+  const carouselData = [
+    {
+      id: '1',
+      src: people0,
+      title: '创始人｜董事长 章瑞瑞',
+      des: '曾就职于兴业全球基金，担任产品经理和深圳市场副总监，' +
+      '后在小牛资本担任资本地产项目总监，销售副总经理。2014年创立宁波坤九投资管理有限公司并担任董事长，' +
+      '累计参与管理资本规模超过200亿人民币，累计服务客户超过500家，遍布长江三角及珠三角地区，从业经验深厚。'
+    },
+    {
+      id: '2',
+      src: people1,
+      title: '金融产品部负责人 徐晋',
+      des: '具有银行、证券等8年金融行业从业经历，具备丰富的宏观经济与行业研究分析经验、专业的金融理论知识，取得注册分析师专业证书、注册国际投资分析师、金融理财师、银行业从业资格证书、证券从业资格证书。'
+    },
+    {
+      id: '3',
+      src: people2,
+      title: '营销事业部总经理 王剑锋',
+      des: '具有7年市场营销管理经验，曾任嘉兴索德医疗器械有限公司总经理。2014年2月至今担任宁波坤九投资管理有限公司营销事业部总经理，目前就读于上海交大安泰经管学院第16期中国CEO私募股权研修班。'
+    },
+    {
+      id: '4',
+      src: people3,
+      title: '宁波坤鹏副总经理 邹亦奇',
+      des: '毕业于墨尔本大学金融会计系和悉尼麦考利大学，会计学学士，应用金融学硕士。' +
+      '曾就职于澳洲国立银行NAB投资部、麦格理银行投资部和招商银行业务部，后担任江西滕王阁食品有限公司副总经理。' +
+      '现担任宁波坤鹏信息科技有限公司副总经理，兼任大客户渠道推广部负责人。'
+    },
+    {
+      id: '5',
+      src: people4,
+      title: '资产数据部负责人 傅佳音',
+      des: '具有14年银行及互联网从业经验，曾就职于渣打、大华、浦发、东亚等知名中外资银行中国总部，' +
+      '主管零售操作风险、渠道运营、电子银行产品研发等工作。对于零售金融业务的产品设计、系统研发、风险控制、' +
+      '流程管理等具有完善的知识结构和丰富的实践经验。早年曾效力于阿里巴巴中国核心事业部。'
+    }
+  ];
+  const style1 = {
+    backgroundImage: `url(${safeimg})`
+  };
+  const style2 = {
+    backgroundImage: `url(${timeimg})`
+  };
+  const style3 = {
+    backgroundImage: `url(${safe2img})`
+  };
+  const style4 = {
+    backgroundImage: `url(${eyeimg})`
+  };
+  return (
+    <div className="platform-introduction-warp animated fadeInRight">
+      <img src={bannerImg} alt="banner" className="banner" />
+      <div className="panel-one">
+        <WingBlank>
+          <p>
+            <img src={titleImg} alt="平台介绍" />
+          </p>
+          <p>
+            <img src={subtitleImg} alt="平台介绍" />
+          </p>
+          <p className="text">
+            领投鸟是宁波坤鹏普惠旗下专注于家庭消费金融的服务平台。
+            充分运用科技金融、智慧金融助力亿万用户“实现我的梦想家”。
+            以家庭生活消费场景为核心，成为连接租住、装修、出行、婚庆等资金需求的一站式家庭消费金融服务平台。
+          </p>
+          <img src={infoImg} alt="平台流程" className="banner" />
+        </WingBlank>
+      </div>
+      <div className="panel-two">
+        <p>
+          <img src={brandImg} alt="brandImg" />
+        </p>
+        <WingBlank>
+          <h5>平台优势</h5>
+          <p className="advantage" style={style1}>
+            <span>安全可靠</span>
+            <span>集团与上市公司数亿资金合作、多重风控、多维度甄选优质资产</span>
+          </p>
+          <p className="advantage" style={style2}>
+            <span>周期灵活</span>
+            <span>平均标的周期为30天左右</span>
+          </p>
+          <p className="advantage" style={style3}>
+            <span>规避风险</span>
+            <span>智能小额分散式借贷，历史兑付率100%</span>
+          </p>
+          <p className="advantage" style={style4}>
+            <span>公开透明</span>
+            <span>银行存款系统开发进行时，资金流转透明</span>
+          </p>
+          <h5>业务模式</h5>
+          <p className="text">领投鸟采用O2O（Online to Offline）方式，
+            与线下非银行金融机构及实力企业合作，由合作机构对借款人进行信用与资质审查并提供本息保障。
+             领投鸟执行周密风控复审、引入严格监管，将通过审核的借款项目推荐给投资人。</p>
+        </WingBlank>
+        <p>
+          <img src={brandImg2} alt="brandImg2" />
+        </p>
+      </div>
+      <div className="panel-three">
+        <p>
+          <img src={teamImg} alt="teamImg" />
+        </p>
+        <Carousel infinite autoplayInterval={3000}>
+          {
+            carouselData.map(x => (
+              <div className="carousel-panel" key={x.id}>
+                <p className="photo">
+                  <img src={x.src} alt={x.text} />
+                </p>
+                <h4>{x.title}</h4>
+                <WingBlank>
+                  <p>{x.des}</p>
+                </WingBlank>
+              </div>
+            ))
+          }
+        </Carousel>
+      </div>
+      <div className="panel-four">
+        <p className="title">
+          <img src={title3} alt="title3" />
+        </p>
+        <WingBlank>
+          <Flex justify="start" alignContent="start" align="start">
+            <Flex.Item>
+              <div className="content">
+                <img src={honor1} alt="honor1" />
+                <span>上海金融信息行业协会理事单位</span>
+              </div>
+            </Flex.Item>
+            <Flex.Item>
+              <div className="content">
+                <img src={honor2} alt="honor2" />
+                <span>计算机软件著作权登记证书</span>
+              </div>
+            </Flex.Item>
+          </Flex>
+          <Flex justify="start" alignContent="start" align="start">
+            <Flex.Item>
+              <div className="content">
+                <img src={honor3} alt="honor3" />
+                <span>中国电子商务协会授权诚信网站认证</span>
+              </div>
+            </Flex.Item>
+            <Flex.Item>
+              <div className="content">
+                <img src={honor4} alt="honor4" />
+                <span>中国电子商务协会委员会安全联盟信誉企业</span>
+              </div>
+            </Flex.Item>
+          </Flex>
+        </WingBlank>
+      </div>
+    </div>
+  );
+};
+
+
+export default PlatIntroductionPage;

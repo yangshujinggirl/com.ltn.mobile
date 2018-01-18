@@ -1,0 +1,20 @@
+  .project-detail-content {
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .pro-desc {
+      color: #666;
+      font-size: 26px;
+      padding: 20px 0;
+      white-space:normal;
+    }
+    .moudle-box {
+      .am-flexbox {
+        text-align: center;
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }

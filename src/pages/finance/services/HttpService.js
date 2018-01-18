@@ -1,0 +1,57 @@
+// 核心请求服务 依赖 axios
+import axios from 'axios';
+import qs from 'qs';
+import BaseUrl from '../../../common/baseUrl';
+
+// 实例化 ajax请求对象
+const ajaxinstance = axios.create({
+  baseURL: BaseUrl,
+  timeout: 5000,
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+// 添加拦截器，处理 公用请求参数，和通用请求头部
+ajaxinstance.interceptors.request.use((config) => {
+  const tempConfig = config;
+  const data = tempConfig.data || {};
+  const params = tempConfig.params || {};
+  data.clientType = 'I';
+  params.clientType = 'I';
+  tempConfig.data = qs.stringify(data);
+  tempConfig.params = params;
+  return tempConfig;
+}, error => Promise.reject(error));
+
+// 请求响应拦截器
+ajaxinstance.interceptors.response.use((response) => {
+  if (response.data.resultCode !== '0') {
+    return Promise.reject(response.data.resultMessage || '系统异常');
+  }
+  return response.data.data;
+}, (error) => {
+  if (error.response) {
+    return Promise.reject('请求失败');
+  }
+  return Promise.reject(error.message);
+});
+
+export default {
+  // get  请求方法封装
+  get(data) {
+    return ajaxinstance.get(data.url, {
+      params: data.params
+    });
+  },
+  // post 请求封装
+  post(data) {
+    return ajaxinstance.post(data.url, {
+      data: data.params
+    });
+  },
+  // 处理并发
+  all(array) {
+    return axios.all(array);
+  }
+};

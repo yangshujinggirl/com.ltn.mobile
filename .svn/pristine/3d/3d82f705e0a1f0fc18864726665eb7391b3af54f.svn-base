@@ -1,0 +1,97 @@
+import React from 'react';
+import {
+  List
+} from 'antd-mobile';
+import {
+  Link
+} from 'react-router-dom';
+
+import './HomePage.scss';
+
+const HomePage = () => (
+  <div className="home-viewport animated fadeInRight">
+    <List>
+      <List.Item arrow="horizontal">
+        <Link to="/"> 首页</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/vipSuccess/123"> vip标约成功</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/vip/12323"> vip标</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/vipselect/12323"> vip标2</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/2011950">理财产品详情2011950-常规标</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/2011949">理财产品详情2011949-新手标</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/1">理财产品详情2011949-体验标</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/16010447">理财产品详情16010447-转让标</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/project/2007449"> 乐巢投系列 理财产品详情 2007449</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/finance/project/2007449"> 乐巢投 理财产品详情 2007449</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/faq/list">帮助列表</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/1">借款协议</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/2">资金托管协议</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/3">智投产品协议</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/4">服务协议</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/5">支付协议</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/6">重大疾病说明</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/7">家财盗抢互助金申请细则</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/8">会员公约</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/protocol/9">白领互助基金申请规则</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/static/safe">安全保障</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/static/partneradvance/1">合伙人-推荐有奖</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/static/partneradvance/2">合伙人-收益提成</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/static/partneradvance/3">合伙人-徽章特权</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/static/plantinfo">平台介绍</Link>
+      </List.Item>
+      <List.Item arrow="horizontal">
+        <Link to="/operate/list">操作指南</Link>
+      </List.Item>
+    </List>
+
+  </div>
+);
+
+export default HomePage;

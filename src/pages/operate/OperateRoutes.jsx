@@ -1,0 +1,38 @@
+// 帮助中心 路由集合组件
+import React from 'react';
+import {
+  Switch,
+  Redirect,
+  Route
+} from 'react-router-dom';
+
+import OperateListPage from './OperateListPage';
+import redEnvelope from './component/RedEnvelopePage';// 红包领取及注册 1
+import appDown from './component/AppDownPage';// App下载及登录 2
+import realName from './component/RealNamePage';// 实名认证 3
+import bindingBank from './component/BindingBankPage';// 绑定银行卡 4
+import userRecharge from './component/UserRechargePage'; // 账户充值 5
+import investment from './component/InvestmentPage'; // 投资理财 6
+import investTrack from './component/InvestTrackPage'; // 投资跟踪 7
+import birdCoin from './component/BirdCoinPage'; // 鸟币说明 8
+import repayment from './component/RepaymentPage'; // 还款说明 9
+
+const OperateRoutes = () => (
+  <div className="operate-center-warp">
+    <Switch >
+      <Route exact path="/operate/list" component={OperateListPage} />
+      <Route exact path="/operate/redEnvelope" component={redEnvelope} />
+      <Route exact path="/operate/appDown" component={appDown} />
+      <Route exact path="/operate/realName" component={realName} />
+      <Route exact path="/operate/bindingBank" component={bindingBank} />
+      <Route exact path="/operate/userRecharge" component={userRecharge} />
+      <Route exact path="/operate/investment" component={investment} />
+      <Route exact path="/operate/investTrack" component={investTrack} />
+      <Route exact path="/operate/birdCoin" component={birdCoin} />
+      <Route exact path="/operate/repayment" component={repayment} />
+      <Redirect from="/operate" to="/operate/list" />
+    </Switch>
+  </div>
+);
+
+export default OperateRoutes;

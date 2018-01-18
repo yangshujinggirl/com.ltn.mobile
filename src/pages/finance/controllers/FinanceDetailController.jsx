@@ -1,0 +1,68 @@
+import React from 'react';
+import { Toast } from 'antd-mobile';
+import Finance from '../modal/finance';
+import FinanceService from '../services/FinanceService';
+import NormalFinanceDetailPage from '../NormalFinanceDetailPage';
+
+class FinanceDetailController extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      productId: this.props.match.params.productId,
+      finance: null
+    };
+  }
+
+  componentWillMount() {
+    Toast.loading('加载中', 0);
+    FinanceService.getProductDetail(this.props.match.params.productId)
+    .then((data) => {
+      Toast.hide();
+      const tempFinance = new Finance(data);
+      tempFinance.annualIncomeTextArray = FinanceService.analysisAnnualIncomeText(tempFinance.annualIncomeText);
+      tempFinance.productRemainAmountFormat =
+        FinanceService.analysisProductRemainAmount(tempFinance.productRemainAmount);
+      tempFinance.progress =
+        FinanceService.getProgress(tempFinance.productTotalAmount, tempFinance.productRemainAmount);
+      tempFinance.tags =
+        FinanceService.getTag(
+          tempFinance.productTag,
+          tempFinance.isAssignment,
+          tempFinance.productType,
+          tempFinance.isContainsCoupon,
+          tempFinance.activityTags);
+      this.setState({
+        finance: tempFinance
+      });
+    }, () => {
+      Toast.hide();
+      Toast.fail('服务器异常');
+    });
+  }
+
+  showContent() {
+    if (this.state.finance) {
+      return (
+        <NormalFinanceDetailPage finance={this.state.finance} />
+      );
+    }
+    return (
+      <div />
+    );
+  }
+
+  render() {
+    return (
+      <div className="finance-detail-viewport">
+        {
+          this.showContent()
+        }
+      </div>
+    );
+  }
+
+}
+
+
+export default FinanceDetailController;

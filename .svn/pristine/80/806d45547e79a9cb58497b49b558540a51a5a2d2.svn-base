@@ -1,0 +1,36 @@
+export default class Finance {
+
+  constructor(data) {
+    // 标的类型 LCTXL，XSB：新手标  TYB:体验标  ZRB:转让标
+    this.productType = data.productType;
+    // 标的id
+    this.id = data.id;
+    // 标的名称
+    this.productName = data.productName;
+    // 标的预期年化，text 文本 3.3%+0.3%
+    this.annualIncomeText = data.annualIncomeText;
+    // 产品标签， 用英文 逗号分隔
+    this.productTag = data.productTag;
+    // 标的投资期限
+    this.convertDay = data.convertDay;
+    // 项目剩余金额  元为单位
+    this.productRemainAmount = data.productRemainAmount;
+    // 项目总金额  元为单位
+    this.productTotalAmount = data.productTotalAmount;
+    // 收益方式
+    this.repaymentType = data.repaymentType;
+    // 起息日期
+    this.staRateDate = data.staRateDate;
+    // 0: 表示不可转让，  1：表示可以转让
+    this.isAssignment = data.isAssignment;
+    // 是否包含理财金券
+    this.isContainsCoupon = data.isContainsCoupon;
+    // 活动标 标签
+    this.activityTags = data.activityTags;
+    // 标的概述的 html
+    this.detailHtml = data.detailHtml;
+    // 安全保障的 html
+    this.safeHtml = data.safeHtml;
+  }
+
+}

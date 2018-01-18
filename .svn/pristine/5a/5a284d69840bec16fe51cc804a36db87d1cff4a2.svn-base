@@ -1,0 +1,15 @@
+import React from 'react';
+
+import VipSelectPage from '../../views/finance/VipSelectPage';
+
+class VipFinanceSelectController extends React.Component {
+  render() {
+    return (
+      <div>
+        <VipSelectPage {...this.props} />
+      </div>
+    );
+  }
+}
+
+export default VipFinanceSelectController;

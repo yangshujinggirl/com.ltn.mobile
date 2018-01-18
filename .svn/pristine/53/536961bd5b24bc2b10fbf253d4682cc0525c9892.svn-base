@@ -1,0 +1,29 @@
+.faq-center-warp {
+  .faq-imgs {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+  .tabel-wrap{
+    border: 1px solid #ddd;
+    border-top:none;
+    .table-tr {
+      display:table-row;
+      .table-td {
+        display:table-cell;
+        width: 50%;
+        border-top:1px solid #ddd;
+        border-right:1px solid #ddd;
+        vertical-align:middle;
+        text-align:center;
+        padding:20px;
+        &:last-child{
+          border-right:none;
+        }
+      }
+    }
+  }
+}
+
+// 这是 帮助中心的全局样式

@@ -1,0 +1,15 @@
+import React from 'react';
+
+import VipFinancePage from '../../views/finance/VipFinancePage';
+
+class VipFinanceController extends React.Component {
+  render() {
+    return (
+      <div>
+        <VipFinancePage {...this.props} />
+      </div>
+    );
+  }
+}
+
+export default VipFinanceController;

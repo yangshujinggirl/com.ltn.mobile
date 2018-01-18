@@ -1,0 +1,116 @@
+.finance-times-content {
+  background-color: #fff;
+  .normal-item-content {
+    padding:0 6%;
+    .normal-wrap {
+      padding:94px 0;
+      color: #333;
+      font-size: 28px;
+    }
+    .circle-list {
+      position: relative;
+      height: 4px;
+      background-color: #f60;
+    }
+    .circle {
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      background-color: #fff;
+      .out,.inner {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        border-radius: 50%;
+      }
+      .type,.date {
+        text-align: center;
+        width: 100px;
+        line-height: 30px;
+        position: absolute;
+      }
+      .out {
+        width: 16px;
+        height: 16px;
+        background-color: #f60;
+      }
+      .inner {
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+      }
+      .type {
+        top:-40px;
+      }
+      .date {
+        bottom:-40px;
+      }
+    }
+    .circle1 {
+      left: 0;
+      .type,.date {
+        text-align: left;
+        left:0;
+      }
+    }
+    .circle2 {
+      right: 200px;
+      .type,.date {
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+      }
+    }
+    .circle3 {
+      right: 0;
+      .type,.date {
+        text-align: right;
+        right:0;
+        left: auto;
+      }
+    }
+  }
+  .items-content{
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 24px 6.5%;
+    white-space: nowrap;
+    .item{
+      display: inline-block;
+      margin-right: 16px;
+      padding: 32px 24px 22px 24px;
+      width:150px;
+      border-radius:4px;
+      box-shadow:0 3px 10px 4px rgba(227,227,227,0.50);
+      white-space: initial;
+      font-size: 24px;
+      &:first-child{
+        width: 198px;
+      }
+      span{
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100%;
+        &:last-child{
+          color: #777;
+        }
+      }
+    }
+    .has-icon{
+      position: relative;
+      .wenhao{
+        position: absolute;
+        top: -2px;
+        right: -10px;
+      }
+    }
+    .wenhao{
+      width: 30px;
+    }
+  }
+}

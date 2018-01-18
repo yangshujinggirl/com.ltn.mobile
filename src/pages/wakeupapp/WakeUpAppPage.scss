@@ -1,0 +1,31 @@
+.wakeup-app-page {
+  // 页面样式
+  font-size: 40px;
+  div {
+    margin: 20px 0;
+  }
+  input {
+    width       : 50%;
+    box-sizing  : border-box;
+    border      : 1px solid red;
+    padding-left: 10%;
+  }
+  img {
+    width: 100%;
+  }
+}
+.modal-footer {
+  padding-top: 20px;
+  a {
+    color: #fff;
+    display: inline-block;
+    width  : 45%;
+    line-height: 80px;
+    background:#ff6600;
+    border-radius: 4px;
+    &:first-child {
+      background-color: #D0D0D0;
+      margin-right: 5%;
+    }
+  }
+}

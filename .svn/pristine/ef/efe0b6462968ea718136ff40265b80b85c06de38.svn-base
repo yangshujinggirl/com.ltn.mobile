@@ -1,0 +1,53 @@
+// 项目入口文件
+/* eslint react/no-children-prop: 0 */
+import React from 'react';
+import ReactDom from 'react-dom';
+import {
+  HashRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+
+import Util from './Util';
+
+import './common/scss/common.scss';
+import './common/scss/animate.scss';
+
+// 首页
+import HomeRoutesLoader from './routes/HomeRoutesLoader';
+// 理财产品模块路由
+import FinanceRoutesLoader from './routes/FinanceRoutesLoader';
+// 帮助中心
+import FaqRoutesLoader from './routes/FaqRoutesLoader';
+// 协议页面
+import ProtocolRoutesLoader from './routes/ProtocolRoutesLoader';
+// 各种静态页面
+import StaticRoutesLoader from './routes/StaticRoutesLoader';
+// 操作指南
+import OperateRoutesLoader from './routes/OperateRoutesLoader';
+
+
+const RoutesWrap = () => (
+  <Router history={history}>
+    <Route
+      children={({ location }) => {
+        Util.updatePageTitle(location);
+        return (
+          <Switch>
+            <Route exact path="/" component={HomeRoutesLoader} />
+            <Route path="/faq" component={FaqRoutesLoader} />
+            <Route path="/protocol" component={ProtocolRoutesLoader} />
+            <Route path="/static" component={StaticRoutesLoader} />
+            <Route path="/finance" component={FinanceRoutesLoader} />
+            <Route path="/operate" component={OperateRoutesLoader} />
+          </Switch>
+        );
+      }}
+    />
+  </Router>
+);
+
+ReactDom.render(
+  <RoutesWrap />,
+    document.getElementById('app')
+);

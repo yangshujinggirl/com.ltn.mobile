@@ -1,0 +1,22 @@
+.operate {
+  .oper-title{
+    white-space: normal;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .oper-desc {
+    color: #666;
+    font-size: 26px;
+    padding: 20px 0;
+    white-space:normal;
+    .c-orange{
+      color: #f60;
+    }
+  }
+  .oper-center{
+    text-align: center;
+  }
+}

@@ -1,0 +1,205 @@
+// 静态页面scss
+.static-page-wrap {
+  //安全保障
+  .faq-safeensure-warp{
+    .carousel-panel{
+      text-align: center;
+      color: #666;
+      width: 100%;
+      height: 640px;
+      p{
+        font-size: 26px;
+        text-align: left;
+        line-height: 1.5em;
+      }
+      h4{
+        margin-bottom: 4px;
+        text-align: center;
+      }
+      .pics {
+        width: 460px;
+      }
+    }
+  }
+  //合伙人特权
+  .partner-advance-wrap{
+    color: #666;
+    h4,h6{
+      font-weight: normal;
+      margin: 0;
+    }
+    h4{
+      border-bottom: 1px solid;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      font-size: 40px;
+    }
+    h6{
+      font-size: 34px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      color: #000;
+    }
+    p{
+      margin: 0;
+      margin-bottom: 30px;
+      font-size: 26px;
+      line-height: 1.5em;
+      text-indent: 2em;
+    }
+    .no-text-index{
+      text-indent:0;
+      img {
+        width: 100%;
+      }
+    }
+    .tips{
+      color: #ea5504
+    }
+  }
+
+  //平台介绍
+  .platform-introduction-warp{
+    font-size: 0;
+    img{
+      max-width: 100%;
+    }
+    .banner{
+      width: 100%;
+    }
+    .panel-one{
+      background-color: #efefef;
+      padding-top: 160px;
+      padding-bottom: 160px;
+      p{
+        margin: 0;
+        margin-bottom: 80px;
+        text-align: center;
+      }
+
+      .text{
+        text-align: left;
+        font-size: 28px;
+        color: #666;
+        text-indent:2em;
+        line-height: 1.5em;
+      }
+      img{
+        display: inline-block;
+      }
+    }
+    .panel-two{
+      padding: 160px 0;
+      text-align: center;
+      text-align: center;
+      h5{
+        text-align: left;
+        font-size: 28px;
+        color: #f60;
+        margin-bottom: 30px;
+      }
+      p{
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .advantage{
+        font-size: 24px;
+        color: #666;
+        text-align: left;
+        padding-left: 40px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        span{
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      .text{
+        font-size: 24px;
+        color: #666;
+        line-height: 1.5em;
+        text-indent: 2em;
+        text-align: left;
+      }
+    }
+    .panel-three{
+      background-color: #efefef;
+      padding: 160px 0;
+      text-align: center;
+      .slider-decorator-0{
+        bottom: -30px !important;
+        .am-carousel-wrap-dot-active{
+          &>span{
+            background: #f60;
+          }
+        }
+      }
+      .carousel-panel{
+        text-align: center;
+        height: 550px;
+        margin-top: 60px;
+        h4{
+          font-size: 30px;
+          color: #333;
+        }
+        p{
+          font-size: 24px;
+          color: #666;
+          line-height: 1.5em;
+          text-indent: 2em;
+          text-align: left;
+        }
+        .photo{
+          height: 230px;
+          text-align: center;
+          margin: 0;
+          position: relative;
+          img{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -114px;
+            width: 228px;
+            height: 228px;
+          }
+        }
+      }
+    }
+    .panel-four{
+      padding: 160px 0;
+      text-align: center;
+      .title{
+        margin-bottom: 60px;
+      }
+      .content{
+        text-align: center;
+        margin-bottom: 100px;
+        img{
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+        span{
+          font-size: 24px;
+          display: inline-block;
+          max-width:240px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //结果页面
+  .invest-success-wrap{
+    padding: 160px 0 0 0 ;
+    text-align: center;
+    .ltn-btn{
+      background-color: #ea5504;
+      border: none;
+      color: #fff;
+    }
+  }
+
+
+}

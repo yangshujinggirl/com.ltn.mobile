@@ -1,0 +1,22 @@
+.loaner-info-list {
+  font-size: 24px;
+  color: #999;
+  padding: 60px 0 30px;
+  .high-color {
+    color: #333;
+  }
+  .item {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 6.5%;
+    .lable {
+      padding: 6px 0;
+    }
+    .l,.r {
+      float: left;
+    }
+    .r {
+      margin-left: 80px;
+    }
+  }
+}

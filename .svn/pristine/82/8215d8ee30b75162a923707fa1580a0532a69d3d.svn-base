@@ -1,0 +1,105 @@
+import Promise from 'es6-promise';
+import Util from '../Util';
+
+import axios from 'axios';
+
+import qs from 'qs';
+
+import {
+  Toast
+} from 'antd-mobile';
+
+Promise.polyfill();
+// 实例化 ajax请求对象
+const ajaxinstance = axios.create({
+  baseURL: '/v3',
+  timeout: 5000,
+  headers: {
+    responseType: 'json',
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+// 添加拦截器，处理 公用请求参数，和通用请求头部
+ajaxinstance.interceptors.request.use((config) => {
+  Toast.loading('加载中...', 0);
+  const tempConfig = config;
+  const data = tempConfig.data || {};
+  data.clientType = 'I';
+  tempConfig.data = qs.stringify(data);
+  return tempConfig;
+}, error => Promise.reject(error));
+
+// 请求响应拦截器
+ajaxinstance.interceptors.response.use((response) => {
+  if (response.data.resultCode !== '0') {
+    // Toast.fail(response.data.resultMessage, 2);
+    Toast.hide();
+    return Promise.reject(response.data || '系统异常');
+  }
+  Toast.hide();
+  return response.data;
+}, (error) => {
+  Toast.fail('网络异常', 2);
+  if (error.response) {
+    return Promise.reject(new Promise.OperationalError('请求失败'));
+  }
+  return Promise.reject(new Promise.OperationalError(error.message));
+});
+
+/**
+ * [ApiClient 移动端api接口封装]
+ * @type {Object}
+ */
+const ApiClient = {
+
+  /**
+   * [getProductDetail 查询理财产品详情]
+   * @param  {[String]} productId [ 理财产品ID ]
+   * @return {[Promise]}           [ Promise ]
+   */
+  getProductDetail(productId) {
+    return ajaxinstance.post('/productDetail', {
+      id: productId
+    });
+  },
+  /**
+   * [getProductPurchasehistory 查询产品购买记录 分页]
+   * @param  {[ String ]} productId   [ 理财产品ID ]
+   * @param  {[ String ]} currentPage [ 当前页码 ]
+   * @param  {[ String ]} pageSize    [ 每页显示条数 默认20，可以不传 ]
+   * @return {[ Promise ]}             [ Promise ]
+   */
+  getProductPurchasehistory(productId, currentPage, pageSize) {
+    return ajaxinstance.post('/product/purchasehistory', {
+      productId,
+      currentPage,
+      pageSize: pageSize || 20
+    });
+  },
+  getIsagreement() {
+    return ajaxinstance.post('/user/account/myAccount', {
+      sessionKey: Util.getSessionKey()
+    });
+  },
+  getUserInfo() {
+    return ajaxinstance.post('/user/userInfo', {
+      sessionKey: Util.getSessionKey()
+    });
+  },
+  getAmountList() {
+    return ajaxinstance.post('/vip/product/list', {
+      sessionKey: Util.getSessionKey()
+    });
+  },
+  goApply(amount, annualIncome, convertDate) {
+    return ajaxinstance.post('/vip/product/apply', {
+      sessionKey: Util.getSessionKey(),
+      amount,
+      annualIncome,
+      convertDate
+    });
+  }
+};
+
+export default ApiClient;

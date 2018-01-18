@@ -1,0 +1,162 @@
+[
+  {
+    url:'/#/',
+    title:'领头鸟理财2'
+  },
+  {
+    url:'/#/faq/list',
+    title:'帮助中心'
+  },
+  {
+    url:'/#/faq/sign',
+    title:'注册与登录'
+  },
+  {
+    url:'/#/faq/bind',
+    title:'认证与绑定'
+  },
+  {
+    url:'/#/faq/password',
+    title:'密码设置'
+  },
+  {
+    url:'/#/faq/safe',
+    title:'安全保障'
+  },
+  {
+    url:'/#/faq/recharge',
+    title:'充值提现'
+  },
+  {
+    url:'/#/faq/projectInfo',
+    title:'项目介绍'
+  },
+  {
+    url:'/#/faq/birdCoin',
+    title:'鸟币帮助'
+  },
+  {
+    url:'/#/faq/tickits',
+    title:'理财金券'
+  },
+  {
+    url:'/#/faq/partner',
+    title:'合伙人计划'
+  },
+  {
+    url:'/#/faq/bond',
+    title:'债权转让'
+  },
+  {
+    url:'/#/faq/points',
+    title:'积分'
+  },
+  {
+    url:'/#/finance/2007449',
+    title:'理财产品详情'
+  },
+  {
+    url:'/#/finance/project/2007449',
+    title:'乐巢投系列 理财产品详情 2007449'
+  },
+  {
+    url:'/#/finance/project/2007449',
+    title:'乐巢投 理财产品详情 2007449'
+  },
+  {
+    url:'/#/protocol/1',
+    title:'借款协议'
+  },
+  {
+    url:'/#/protocol/2',
+    title:'资金托管协议'
+  },
+  {
+    url:'/#/protocol/3',
+    title:'智投产品协议'
+  },
+  {
+    url:'/#/protocol/4',
+    title:'服务协议'
+  },
+  {
+    url:'/#/protocol/5',
+    title:'支付协议'
+  },
+  {
+    url:'/#/protocol/6',
+    title:'重大疾病说明'
+  },
+  {
+    url:'/#/protocol/7',
+    title:'家财盗抢互助金申请细则'
+  },
+  {
+    url:'/#/protocol/8',
+    title:'会员公约'
+  },
+  {
+    url:'/#/protocol/9',
+    title:'白领互助基金申请规则'
+  },
+  {
+    url:'/#/static/safe',
+    title:'安全保障'
+  },
+  {
+    url:'/#/static/partneradvance/1',
+    title:'合伙人-推荐有奖'
+  },
+  {
+    url:'/#/static/partneradvance/2',
+    title:'合伙人-收益提成'
+  },
+  {
+    url:'/#/static/partneradvance/3',
+    title:'合伙人-徽章特权'
+  },
+  {
+    url:'/#/static/plantinfo',
+    title:'平台介绍'
+  },
+  {
+    url:'/#/operate/list',
+    title:'操作指南'
+  },
+  {
+    url: '/#/operate/redEnvelope',
+    title: '红包领取及注册'
+  },
+  {
+    url: '/#/operate/appDown',
+    title: 'App下载及登录'
+  },
+  {
+    url: '/#/operate/realName',
+    title: '实名认证'
+  },
+  {
+    url: '/#/operate/bindingBank',
+    title: '绑定银行卡'
+  },
+  {
+    url: '/#/operate/userRecharge',
+    title: '账户充值'
+  },
+  {
+    url: '/#/operate/investment',
+    title: '投资理财'
+  },
+  {
+    url: '/#/operate/investTrack',
+    title: '投资跟踪'
+  },
+  {
+    url: '/#/operate/birdCoin',
+    title: '鸟币说明'
+  },
+  {
+    url: '/#/operate/repayment',
+    title: '还款说明'
+  }
+]

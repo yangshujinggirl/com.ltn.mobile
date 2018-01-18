@@ -1,0 +1,78 @@
+// 帮助中心列表
+/* eslint react/prop-types: 0 */
+import React from 'react';
+import { List } from 'antd-mobile';
+import './Faq.scss';
+
+const Item = List.Item;
+
+const FaqListPage = ({ history }) => {
+  const showFaqDetail = router => ((e) => {
+    e.stopPropagation();
+    history.push(router);
+  });
+
+  const FaqListItems = [
+    {
+      id: '1',
+      text: '注册与登录',
+      router: '/faq/sign'
+    }, {
+      id: '2',
+      text: '认证与绑定',
+      router: '/faq/bind'
+    }, {
+      id: '3',
+      text: '密码设置',
+      router: '/faq/password'
+    }, {
+      id: '4',
+      text: '安全保障',
+      router: '/faq/safe'
+    }, {
+      id: '5',
+      text: '充值提现',
+      router: '/faq/recharge'
+    }, {
+      id: '6',
+      text: '项目介绍',
+      router: '/faq/projectInfo'
+    }, {
+      id: '7',
+      text: '鸟币',
+      router: '/faq/birdCoin'
+    }, {
+      id: '8',
+      text: '理财金券',
+      router: '/faq/tickits'
+    }, {
+      id: '9',
+      text: '合伙人计划',
+      router: '/faq/partner'
+    }, {
+      id: '10',
+      text: '债权转让',
+      router: '/faq/bond'
+    }, {
+      id: '11',
+      text: '积分',
+      router: '/faq/points'
+    }, {
+      id: '12',
+      text: '签到',
+      router: '/faq/qiandao'
+    }
+  ];
+
+  return (
+    <div className="animated fadeInRight">
+      <List>
+        {FaqListItems.map((x, i) => (
+          <Item arrow="horizontal" key={x.id} onClick={showFaqDetail(x.router)}>{i + 1}、{x.text}</Item>
+        ))}
+      </List>
+    </div>
+  );
+};
+
+export default FaqListPage;

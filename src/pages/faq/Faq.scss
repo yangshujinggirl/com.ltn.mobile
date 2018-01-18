@@ -1,0 +1,42 @@
+.faq-center-warp {
+  .faq-imgs {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+  .tabel-wrap{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top:none;
+    display:table;
+    .table-tr {
+      display:table-row;
+      .table-td {
+        display:table-cell;
+        width: 50%;
+        border-top:1px solid #ddd;
+        border-right:1px solid #ddd;
+        vertical-align:middle;
+        text-align:center;
+        padding:20px;
+        &:last-child{
+          border-right:none;
+        }
+      }
+    }
+  }
+  .faq-recharge {
+    .tabel-wrap{
+
+      .table-tr {
+        .table-td {
+          display:table-cell;
+          width: 33%;
+        }
+      }
+    }
+  }
+}
+
+// 这是 帮助中心的全局样式

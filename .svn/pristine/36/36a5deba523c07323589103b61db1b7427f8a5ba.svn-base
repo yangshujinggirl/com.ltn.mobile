@@ -1,0 +1,78 @@
+import lodash from 'lodash';
+import routesData from './routesData.json5';
+
+const Util = {
+  linkUrl: 'http://192.168.18.194:8080',
+  // linkUrl:'https://www.lingtouniao.com',
+  updatePageTitle(location) {
+    const routeObj = lodash.find(routesData, o => o.url.indexOf(location.pathname) !== -1);
+    let pageTitle = '领头鸟理财';
+    if (routeObj) {
+      pageTitle = routeObj.title;
+    } else {
+      pageTitle = '领头鸟理财';
+    }
+    document.title = pageTitle;
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = 'display: none; width: 0; height: 0;';
+    // iframe.src = '2312';
+    const listener = () => {
+      setTimeout(() => {
+        iframe.removeEventListener('load', listener);
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+        }, 20000);
+      }, 0);
+    };
+    iframe.addEventListener('load', listener);
+    document.body.appendChild(iframe);
+  },
+  // 获取sessionkty
+  getSessionKey() {
+    // return "3555cd23fd0861c3610faf1a75de7c21";
+    if (typeof window.LtnApp === 'undefined') {
+      return sessionStorage.getItem('ltn_sessionKey');
+    }
+    const res = window.LtnApp.getSessionKey();
+    return res.sid;
+  },
+  // 是否登录
+  isLogin() {
+    if (typeof window.LtnApp === 'undefined') {
+      // alert(typeof window.LtnApp)
+      return !!sessionStorage.getItem('ltn_sessionKey');
+    }
+    const res = window.LtnApp.getSessionKey();
+      // alert(!!res.sid);
+      // Toast.info(res.sid, 5);
+    return !!res.sid;
+  },
+  // 去登录
+  goLogin(url) {
+    if (typeof window.LtnApp === 'undefined') {
+      window.location.href = `/native/user_login/user_login.html?url=${url}`;
+    } else {
+      window.LtnApp.login({
+        url
+      });
+    }
+  },
+  // 去投资
+  goProductList() {
+    if (typeof window.LtnApp === 'undefined') {
+      window.location.href = '/native/home/home.html?';
+    } else {
+      window.LtnApp.gotoAppPage({ type: 'gotoProductList' });
+    }
+  },
+  // 去我的投资
+  goMyInvest() {
+    if (typeof window.LtnApp === 'undefined') {
+      window.location.href = '/native/account_viewall/account_viewall.html';
+    } else {
+      window.LtnApp.gotoAppPage({ type: 'gotoMyInvestment' });
+    }
+  }
+};
+
+export default Util;

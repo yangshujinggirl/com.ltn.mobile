@@ -1,0 +1,27 @@
+import React from 'react';
+
+import HomePage from '../../views/home/HomePage';
+
+class HomeController extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '2312'
+    };
+    this.changeName = (name) => {
+      this.setState({
+        name
+      });
+    };
+  }
+
+  render() {
+    return (
+      <HomePage {...this.state} changeName={this.changeName} />
+    );
+  }
+
+}
+
+export default HomeController;

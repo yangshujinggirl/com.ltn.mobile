@@ -1,0 +1,10 @@
+@font-size-icontext: 20px;
+@font-size-caption-sm: 24px;
+@font-size-base: 26px;
+@font-size-subhead: 28px;
+@font-size-caption: 30px;
+@font-size-heading: 32px;
+@font-size-display-sm: 34px;
+@font-size-display-md: 40px;
+@font-size-display-lg: 46px;
+@font-size-display-xl: 60px;

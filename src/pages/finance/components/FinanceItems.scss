@@ -1,0 +1,41 @@
+.finance-items-wrap{
+  background-color: #fff;
+  .items-wrap{
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 24px 6.5%;
+    white-space: nowrap;
+    .item{
+      display: inline-block;
+      margin-right: 16px;
+      padding: 32px 24px 22px 24px;
+      width:150px;
+      border-radius:4px;
+      box-shadow:0 3px 10px 4px rgba(227,227,227,0.50);
+      white-space: initial;
+      font-size: 24px;
+      &:first-child{
+        width: 198px;
+      }
+      span{
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100%;
+        &:last-child{
+          color: #777;
+        }
+      }
+    }
+  }
+  .has-icon{
+    position: relative;
+    .wenhao{
+      position: absolute;
+      top: -2px;
+      right: -10px;
+    }
+  }
+  .wenhao{
+    width: 30px;
+  }
+}

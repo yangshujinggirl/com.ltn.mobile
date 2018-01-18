@@ -1,0 +1,211 @@
+import React  from 'react';
+import { ListView } from 'antd-mobile';
+import FinanceService from '../services/FinanceService';
+// 分页开始页码
+let pageIndex = 0;
+let totalCount = 1;
+let pageSize = 10;
+const HeaderContent = ()=>(
+  <div>
+    dsd
+    <p>sds</p>
+  </div>
+)
+
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const getRowData = (dataBlob,sectionID,rowID)=>{
+      return dataBlob[sectionID][rowID]
+    }
+    const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
+    const dataSource = new ListView.DataSource({
+      getRowData,
+      getSectionHeaderData: getSectionData,
+      rowHasChanged: (row1, row2) => row1 !== row2
+    });
+    const dataSource2 = new ListView.DataSource({
+      getRowData,
+      getSectionHeaderData: getSectionData,
+      rowHasChanged: (row1, row2) => row1 !== row2
+    });
+    this.dataBlob = {};
+    this.dataBlob2 = {};
+    this.rowIDs2 = [];
+    this.rowIDs = [];
+    this.pageIndex==0;
+    this.state = {
+      dataSource: dataSource.cloneWithRows(this.dataBlob, this.rowIDs),
+      dataSource2: dataSource2.cloneWithRows(this.dataBlob2, this.rowIDs2),
+      isLoading: true,
+      tab:1
+    };
+  }
+
+  loadData(currentPage=0){
+    FinanceService.getPurchasehistory(currentPage,10,2011136)
+    .then(data=>{
+      totalCount = data.totalCount;
+      data.purchaseHistoryList.map((items,index)=>{
+        this.dataBlob[`currentPage-${currentPage}-${index}`]=items;
+        this.rowIDs.push(`currentPage-${currentPage}-${index}`);
+        this.dataBlob2[`currentPage-${currentPage}-${index}`]=items;
+        this.rowIDs2.push(`currentPage-${currentPage}-${index}`);
+      });
+      this.rowIDs = [].concat(this.rowIDs);
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(this.dataBlob,this.rowIDs),
+        dataSource2: this.state.dataSource2.cloneWithRows(this.dataBlob2,this.rowIDs2),
+        isLoading: false,
+      });
+    })
+
+  }
+
+  initData(){
+
+    const dataSource = new ListView.DataSource({
+      getRowData,
+      getSectionHeaderData: getSectionData,
+      rowHasChanged: (row1, row2) => row1 !== row2
+    });
+    this.dataBlob = {};
+    this.rowIDs = [];
+    this.pageIndex==0;
+    this.state = {
+      dataSource: dataSource.cloneWithRows(this.dataBlob, this.rowIDs),
+      isLoading: true,
+    };
+  }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
+  onEndReached = (event) => {
+    if (!this.state.isLoading || !(pageIndex*pageSize>totalCount)) {
+      this.setState({ isLoading: true });
+      this.loadData(++pageIndex);
+    }
+  }
+  onEndReached2 = (event) => {
+    if (!this.state.isLoading || !(pageIndex*pageSize>totalCount)) {
+      this.setState({ isLoading: true });
+      this.loadData(++pageIndex);
+    }
+  }
+  demo(){
+    console.log(this.refs.lv.refs.listview);
+    this.refs.lv.refs.listview.scrollTo(0, 0);
+    this.setState({
+      tab:2
+    })
+  }
+  demo2(){
+    this.refs.lv2.refs.listview.scrollTo(0, 0);
+    this.setState({
+      tab:1
+    })
+  }
+  render() {
+    // 没条数据之间的间隔
+    const separator = (sectionID, rowID)=>(
+      <div key={`${sectionID}-${rowID}`}>
+        '这是分割线'
+      </div>
+    )
+    // 每一条数据
+    const row = (rowData, sectionID, rowID) => {
+      // console.log(sectionID)
+      console.log(rowData);
+      // console.log(rowID)
+      return(
+        <div key={rowID} className="row">
+          <p>{rowID}</p>
+        </div>
+      )
+    };
+    const renderSectionHeader = (sectionData,sectionID)=>{
+      return(
+        <div>
+          <span style={{display:'inline-block',width:'33%'}}  onClick={this.demo.bind(this)}>tab1</span>
+          <span style={{display:'inline-block',width:'33%'}}>tab2</span>
+          <span style={{display:'inline-block',width:'33%'}}>tab3</span>
+        </div>
+      )
+    }
+    const renderSectionHeader2 = (sectionData,sectionID)=>{
+      return(
+        <div>
+          <span style={{display:'inline-block',width:'33%'}}  onClick={this.demo2.bind(this)}>tab1</span>
+          <span style={{display:'inline-block',width:'33%'}}>tab2</span>
+          <span style={{display:'inline-block',width:'33%'}}>tab3</span>
+        </div>
+      )
+    }
+    return (
+      <div>
+      {
+        this.state.tab==1?(
+          <ListView ref="lv"
+            dataSource={this.state.dataSource}
+            renderHeader={() => <HeaderContent></HeaderContent>}
+            renderFooter={() => <div style={{ padding: 30, textAlign: 'center' }}>
+              {this.state.isLoading ? '加载中...' : '加载完毕'}
+            </div>}
+            renderSectionHeader={renderSectionHeader.bind(this)}
+            renderRow={row}
+            renderSeparator={separator}
+            className="am-list"
+            pageSize={4}
+            scrollEventThrottle={10}
+            onScroll={() => { console.log('scroll'); }}
+            onEndReached={this.onEndReached}
+            onEndReachedThreshold={10}
+            stickyHeader
+            stickyProps={{
+              stickyStyle: { zIndex: 999, WebkitTransform: 'none', transform: 'none' },
+              // topOffset: -43,
+              // isActive: false, // 关闭 sticky 效果
+            }}
+            stickyContainerProps={{
+              className: 'for-stickyContainer-demo',
+            }}
+          />
+      ):(
+        <div onClick={this.demo2.bind(this)}>
+          <ListView ref="lv2"
+            dataSource={this.state.dataSource2}
+            renderHeader={() => (<div>这是第二个</div>)}
+            renderFooter={() => <div style={{ padding: 30, textAlign: 'center' }}>
+              {this.state.isLoading ? '加载中...' : '加载完毕2'}
+            </div>}
+            renderSectionHeader={renderSectionHeader2}
+            renderRow={row}
+            renderSeparator={separator}
+            className="am-list"
+            pageSize={4}
+            scrollEventThrottle={10}
+            onScroll={() => { console.log('scroll'); }}
+            onEndReached={this.onEndReached2}
+            onEndReachedThreshold={10}
+            stickyHeader
+            stickyProps={{
+              stickyStyle: { zIndex: 999, WebkitTransform: 'none', transform: 'none' },
+              // topOffset: -43,
+              // isActive: false, // 关闭 sticky 效果
+            }}
+            stickyContainerProps={{
+              className: 'for-stickyContainer-demo',
+            }}
+          />
+        </div>
+      )
+      }
+    </div>
+
+    );
+  }
+}
+export default Demo;

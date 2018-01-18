@@ -1,0 +1,58 @@
+body,
+html {
+  font-family: 'PingFangSC-Light',Helvetica,Arial,'Microsoft YaHei','Droid Sans',sans-serif !important;
+  color      : #333;
+}
+.clearfix {
+  &:after,
+  &:before {
+    content   : '.';
+    display   : block;
+    height    : 0;
+    clear     : both;
+    visibility: hidden;
+    font-size : 0;
+  }
+}
+// 针对  ant-design-mobile  组件样式定制化
+.ltn-ant {
+  /*** List  组件 ***/
+  .am-list-item {
+    .am-list-line {
+      .am-list-content {
+        font-size: 28px;
+      }
+    }
+  }
+  /*** accordion 手风琴组件 ****/
+  .am-accordion {
+    .am-accordion-item {
+      .am-accordion-header {
+        font-size: 28px;
+      }
+    }
+  }
+  // tabs 组件 样式
+  .am-tabs-ink-bar {
+    background-color: #ea5504;
+  }
+  .am-tabs-bar {
+    .am-tabs-tab-active {
+      color: #ea5504;
+    }
+  }
+}
+// 针对组件通用部分样式 抽取
+/*** 帮助中心通用样式 ***/
+.faq-text-content {
+  padding  : 10px 30px;
+  font-size: 26px;
+  p {
+    margin     : 10px 0;
+    line-height: 1.5em;
+    color      : #666;
+  }
+}
+img {
+  max-width: 100%;
+}
